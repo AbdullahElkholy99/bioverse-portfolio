@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bioverse — Medicines for metabolic and inflammatory disease</title>
+  <meta name="description" content="Bioverse is a clinical-stage biotech company in Basel developing oral small molecules for metabolic, inflammatory and rare disease. Twelve programmes, four in the clinic.">
+  <meta name="theme-color" content="#f3efe6">
+  <link rel="canonical" href="https://www.bioverse.example/">
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Bioverse">
+  <meta property="og:title" content="Bioverse — Medicines measured in decades">
+  <meta property="og:description" content="Clinical-stage biotech in Basel. Oral small molecules for metabolic, inflammatory and rare disease.">
+  <meta property="og:url" content="https://www.bioverse.example/">
+  <meta property="og:image" content="https://www.bioverse.example/assets/images/hero-microscope.jpg">
+  <meta property="og:image:width" content="1280">
+  <meta property="og:image:height" content="1920">
+  <meta property="og:image:alt" content="Researcher adjusting a sample under a stereo microscope">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Bioverse — Medicines measured in decades">
+  <meta name="twitter:description" content="Clinical-stage biotech in Basel. Oral small molecules for metabolic, inflammatory and rare disease.">
+  <meta name="twitter:image" content="https://www.bioverse.example/assets/images/hero-microscope.jpg">
+
+  <link rel="icon" href="assets/favicon.webp" type="image/webp" sizes="64x64">
+  <link rel="icon" href="assets/favicon.png" type="image/png" sizes="64x64">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.webp" sizes="180x180">
+  <link rel="preload" href="assets/fonts/newsreader-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/instrument-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- Set theme before paint to avoid a flash -->
+  <script>
+    (function () {
+      try {
+        var stored = localStorage.getItem('bioverse-theme');
+        var dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var theme = stored || (dark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+        document.documentElement.classList.add('js');
+        var meta = document.querySelector('meta[name="theme-color"]');
+        if (meta) meta.setAttribute('content', theme === 'dark' ? '#0b141b' : '#f3efe6');
+      } catch (e) { /* theme is a preference, not a requirement */ }
+    })();
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Bioverse AG",
+    "url": "https://www.bioverse.example/",
+    "logo": "https://www.bioverse.example/assets/logo-tile.webp",
+    "description": "Clinical-stage biotech company developing oral small molecules for metabolic, inflammatory and rare disease.",
+    "foundingDate": "2009",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "St. Johanns-Vorstadt 00",
+      "postalCode": "4057",
+      "addressLocality": "Basel",
+      "addressCountry": "CH"
+    },
+    "contactPoint": [{
+      "@type": "ContactPoint",
+      "contactType": "customer support",
+      "email": "hello@bioverse.ch",
+      "availableLanguage": ["English", "German"]
+    }],
+    "sameAs": [
+      "https://www.linkedin.com/company/bioverse",
+      "https://x.com/bioverse"
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Icon sprite: one family, one stroke weight -->
+  <svg class="sprite" aria-hidden="true" focusable="false" width="0" height="0">
+    <symbol id="i-arrow" viewBox="0 0 24 24">
+      <path d="M4 12h15M13 6l6 6-6 6"/>
+    </symbol>
+    <symbol id="i-arrow-up-right" viewBox="0 0 24 24">
+      <path d="M7 17 17 7M8 7h9v9"/>
+    </symbol>
+    <symbol id="i-close" viewBox="0 0 24 24">
+      <path d="m6 6 12 12M18 6 6 18"/>
+    </symbol>
+    <symbol id="i-search" viewBox="0 0 24 24">
+      <circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/>
+    </symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24">
+      <path d="M4 8h16M4 16h16"/>
+    </symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>
+    </symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24">
+      <path d="M20 14.5A8 8 0 0 1 9.5 4 8.2 8.2 0 1 0 20 14.5Z"/>
+    </symbol>
+    <symbol id="i-check" viewBox="0 0 24 24">
+      <path d="m5 12.5 4.5 4.5L19 7"/>
+    </symbol>
+    <symbol id="i-up" viewBox="0 0 24 24">
+      <path d="M12 19V5M6 11l6-6 6 6"/>
+    </symbol>
+    <symbol id="i-linkedin" viewBox="0 0 24 24">
+      <path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3V9Zm6 0h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.4c0-1.29-.02-2.95-1.8-2.95-1.8 0-2.08 1.4-2.08 2.85V21H9V9Z" fill="currentColor" stroke="none"/>
+    </symbol>
+    <symbol id="i-x" viewBox="0 0 24 24">
+      <path d="M18.9 2H22l-6.77 7.74L23.2 22h-6.23l-4.88-6.38L6.5 22H3.35l7.24-8.28L1.5 2h6.39l4.41 5.83L18.9 2Zm-1.09 18.2h1.72L7.28 3.7H5.44L17.81 20.2Z" fill="currentColor" stroke="none"/>
+    </symbol>
+  </svg>
+
+  <!-- Header -->
+  <header class="site-header" id="site-header">
+    <div class="shell header__inner">
+      <a class="brand" href="#main" aria-label="Bioverse — home">
+        <span class="brand__mark" aria-hidden="true"></span>
+        <span class="brand__type">
+          <span class="brand__word">Bioverse</span>
+          <span class="brand__desc">Pharmaceutical Industries</span>
+        </span>
+      </a>
+
+      <nav class="site-nav" id="site-nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="#company">Company</a></li>
+          <li><a href="#pipeline">Pipeline</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#evidence">Evidence</a></li>
+          <li><a href="#insights">Insights</a></li>
+        </ul>
+        <a class="btn btn--sm nav-cta" href="#contact">Partner with us</a>
+      </nav>
+
+      <div class="header__actions">
+        <button class="icon-btn" id="theme-toggle" type="button" aria-label="Switch to dark theme">
+          <svg class="icon icon--moon" aria-hidden="true"><use href="#i-moon"/></svg>
+          <svg class="icon icon--sun" aria-hidden="true"><use href="#i-sun"/></svg>
+        </button>
+        <button class="icon-btn nav-toggle" id="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+          <svg class="icon icon--menu" aria-hidden="true"><use href="#i-menu"/></svg>
+          <svg class="icon icon--close" aria-hidden="true"><use href="#i-close"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- Hero -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="shell hero__grid">
+        <div class="hero__copy">
+          <p class="eyebrow"><span class="eyebrow__num">Basel, CH</span> Clinical-stage biotech</p>
+          <h1 id="hero-title">Medicines measured in <em>decades</em>, not quarters.</h1>
+          <p class="hero__lede">Bioverse develops oral small molecules for metabolic, inflammatory and rare disease. Four programmes are in the clinic, two in Phase II, and our products reach patients in 50+ countries.</p>
+          <div class="hero__actions">
+            <a class="btn" href="#pipeline">Explore the pipeline
+              <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+            </a>
+            <a class="link-arrow" href="#insights">Read the 2026 letter
+              <svg class="icon" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <figure class="hero__media">
+          <div class="media media--portrait">
+            <img src="assets/images/hero-microscope.jpg" width="1280" height="1920"
+                 alt="A researcher in nitrile gloves adjusts a specimen under a stereo microscope."
+                 fetchpriority="high" decoding="async">
+          </div>
+          <figcaption>
+            <span>Process development, Building C — Basel</span>
+            <span class="hero__strip" aria-label="Certifications and reach">
+              GMP <i aria-hidden="true">·</i> ISO 9001 <i aria-hidden="true">·</i> EMA &amp; FDA inspected <i aria-hidden="true">·</i> 50+ countries
+            </span>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Certifications strip -->
+    <section class="cert-band" aria-labelledby="cert-title">
+      <div class="shell cert-band__inner">
+        <h2 class="cert-band__title" id="cert-title">Audited, not asserted.</h2>
+        <ul class="cert-list">
+          <li class="cert"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> EU GMP</li>
+          <li class="cert"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> ISO 9001:2015</li>
+          <li class="cert"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> EMA inspected</li>
+          <li class="cert"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> FDA registered</li>
+          <li class="cert"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Swissmedic</li>
+        </ul>
+        <a class="cert-band__link" href="#contact">Certificates on request</a>
+      </div>
+    </section>
+
+    <!-- Company -->
+    <section class="section" id="company" aria-labelledby="company-title">
+      <div class="shell">
+        <div class="split split--about">
+          <figure class="figure" data-reveal>
+            <div class="media media--landscape">
+              <img src="assets/images/lab-team.jpg" width="1280" height="853"
+                   alt="Four laboratory scientists working at analysers in a clinical laboratory."
+                   loading="lazy" decoding="async">
+            </div>
+            <figcaption>Central laboratory, Basel — routine batch analysis.</figcaption>
+          </figure>
+
+          <div class="about__body">
+            <p class="eyebrow" data-reveal><span class="eyebrow__num">01</span> The company</p>
+            <h2 class="display" id="company-title" data-reveal>A small company with a long horizon.</h2>
+
+            <blockquote class="pull" data-reveal>
+              “We would rather run one honest trial than ship ten hopeful ones.”
+              <cite>Marta Aebi, Chief Executive</cite>
+            </blockquote>
+
+            <p data-reveal>Bioverse was founded in Basel in 2009 by three chemists who had spent a decade on the same stubborn target. We are still privately held, still in the same building, and still measured by whether the data hold up.</p>
+
+            <dl class="facts" data-reveal>
+              <div><dt>Founded</dt><dd>2009, Basel</dd></div>
+              <div><dt>People</dt><dd>214</dd></div>
+              <div><dt>Programmes</dt><dd>12</dd></div>
+              <div><dt>Markets</dt><dd>50+</dd></div>
+            </dl>
+
+            <ol class="timeline" data-reveal aria-label="Company milestones">
+              <li><span>2009</span><p>Founded by three medicinal chemists; first laboratory on St. Johanns-Vorstadt.</p></li>
+              <li><span>2014</span><p>First GMP batch released from our Basel pilot plant.</p></li>
+              <li><span>2019</span><p>BV-204 enters Phase II in psoriatic arthritis.</p></li>
+              <li><span>2023</span><p>Bivacet 20 mg receives EU marketing authorisation.</p></li>
+              <li><span>2026</span><p>Twelve programmes; four in clinical development.</p></li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pipeline -->
+    <section class="section section--tight" id="pipeline" aria-labelledby="pipeline-title">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow" data-reveal><span class="eyebrow__num">02</span> Research</p>
+            <h2 class="display" id="pipeline-title" data-reveal>Twelve programmes. Four in the clinic.</h2>
+          </div>
+          <div class="section-head__aside" data-reveal>
+            <p>Two modalities, one rule: no programme advances without a reproducible readout. Data cut-off 30 September 2026.</p>
+            <a class="link-arrow" href="#contact">Request the pipeline deck
+              <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="tracker-wrap" data-reveal>
+          <table class="tracker">
+            <caption class="sr-only">Bioverse research pipeline by programme and development stage</caption>
+            <thead>
+              <tr>
+                <th scope="col">Programme</th>
+                <th scope="col">Indication</th>
+                <th scope="col">Discovery</th>
+                <th scope="col">Preclinical</th>
+                <th scope="col">Phase I</th>
+                <th scope="col">Phase II</th>
+                <th scope="col">Phase III</th>
+                <th scope="col">Approved</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row" class="programme">BV-101<small>Oral, once daily</small></th>
+                <td>MASH</td>
+                <td aria-label="Discovery: complete"><span class="dot dot--done"></span></td>
+                <td aria-label="Preclinical: complete"><span class="dot dot--done"></span></td>
+                <td aria-label="Phase I: complete"><span class="dot dot--done"></span></td>
+                <td aria-label="Phase II: active"><span class="dot dot--active"></span></td>
+                <td aria-label="Phase III: planned"><span class="dot"></span></td>
+                <td aria-label="Approved: not started"><span class="dot"></span></td>
+              </tr>
+              <tr>
+                <th scope="row" class="programme">BV-204<small>Subcutaneous</small></th>
+                <td>Psoriatic arthritis</td>
+                <td aria-label="Discovery: complete"><span class="dot dot--done"></span></td>
+                <td aria-label="Preclinical: complete"><span class="dot dot--done"></span></td>
+                <td aria-label="Phase I: complete"><span class="dot dot--done"></span></td>
+                <td aria-label="Phase II: active"><span class="dot dot--active"></span></td>
+                <td aria-label="Phase III: planned"><span class="dot"></span></td>
+                <td aria-label="Approved: not started"><span class="dot"></span></td>
+              </tr>
+              <tr>
+                <th scope="row" class="programme">BV-311<small>Oral, twice daily</small></th>
+                <td>Solid tumours</td>
+                <td aria-label="Discovery: complete"><span class="dot dot--done"></span></td>
+                <td aria-label="Preclinical: complete"><span class="dot dot--done"></span></td>
+                <td aria-label="Phase I: active"><span class="dot dot--active"></span></td>
+                <td aria-label="Phase II: planned"><span class="dot"></span></td>
+                <td aria-label="Phase III: planned"><span class="dot"></span></td>
+                <td aria-label="Approved: not started"><span class="dot"></span></td>
+              </tr>
+              <tr>
+                <th scope="row" class="programme">BV-402<small>Oral, once daily</small></th>
+                <td>Fabry disease</td>
+                <td aria-label="Discovery: complete"><span class="dot dot--done"></span></td>
+                <td aria-label="Preclinical: active"><span class="dot dot--active"></span></td>
+                <td aria-label="Phase I: planned"><span class="dot"></span></td>
+                <td aria-label="Phase II: planned"><span class="dot"></span></td>
+                <td aria-label="Phase III: planned"><span class="dot"></span></td>
+                <td aria-label="Approved: not started"><span class="dot"></span></td>
+              </tr>
+              <tr>
+                <th scope="row" class="programme">BV-509<small>Oral, once weekly</small></th>
+                <td>Type 2 diabetes</td>
+                <td aria-label="Discovery: active"><span class="dot dot--active"></span></td>
+                <td aria-label="Preclinical: planned"><span class="dot"></span></td>
+                <td aria-label="Phase I: planned"><span class="dot"></span></td>
+                <td aria-label="Phase II: planned"><span class="dot"></span></td>
+                <td aria-label="Phase III: planned"><span class="dot"></span></td>
+                <td aria-label="Approved: not started"><span class="dot"></span></td>
+              </tr>
+              <tr>
+                <th scope="row" class="programme">Bivacet<small>Marketed</small></th>
+                <td>Type 2 diabetes</td>
+                <td aria-label="Discovery: complete"><span class="dot dot--done"></span></td>
+                <td aria-label="Preclinical: complete"><span class="dot dot--done"></span></td>
+                <td aria-label="Phase I: complete"><span class="dot dot--done"></span></td>
+                <td aria-label="Phase II: complete"><span class="dot dot--done"></span></td>
+                <td aria-label="Phase III: complete"><span class="dot dot--done"></span></td>
+                <td aria-label="Approved: authorised in the EU"><span class="dot dot--done"></span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="tracker-foot" data-reveal>
+          <ul class="legend" aria-label="Pipeline legend">
+            <li><span class="dot dot--done" aria-hidden="true"></span> Complete</li>
+            <li><span class="dot dot--active" aria-hidden="true"></span> Active</li>
+            <li><span class="dot" aria-hidden="true"></span> Planned</li>
+          </ul>
+          <p>Programme codes are internal. Trial registrations and investigator brochures are available to qualified partners.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Products -->
+    <section class="section section--tight" id="products" aria-labelledby="products-title">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow" data-reveal><span class="eyebrow__num">03</span> Catalogue</p>
+            <h2 class="display" id="products-title" data-reveal>Approved products.</h2>
+          </div>
+          <div class="section-head__aside" data-reveal>
+            <p>Nine medicines, five therapeutic areas, one formulation standard. Prescribing information is available for every presentation.</p>
+          </div>
+        </div>
+
+        <div class="catalog-toolbar" data-reveal>
+          <label class="search">
+            <svg class="icon" aria-hidden="true"><use href="#i-search"/></svg>
+            <span class="sr-only">Search products</span>
+            <input type="search" id="product-search" placeholder="Search name or code" autocomplete="off">
+          </label>
+
+          <div class="filters" role="group" aria-label="Filter by therapeutic area">
+            <button class="chip" type="button" data-category="all" aria-pressed="true">All</button>
+            <button class="chip" type="button" data-category="Metabolic" aria-pressed="false">Metabolic</button>
+            <button class="chip" type="button" data-category="Immunology" aria-pressed="false">Immunology</button>
+            <button class="chip" type="button" data-category="Oncology" aria-pressed="false">Oncology</button>
+            <button class="chip" type="button" data-category="Rare disease" aria-pressed="false">Rare disease</button>
+            <button class="chip" type="button" data-category="Supportive care" aria-pressed="false">Supportive care</button>
+          </div>
+
+          <div class="sort">
+            <label for="product-sort">Sort</label>
+            <select id="product-sort">
+              <option value="name">A–Z</option>
+              <option value="newest">Newest first</option>
+              <option value="area">Therapeutic area</option>
+            </select>
+          </div>
+        </div>
+
+        <p class="catalog-count" id="catalog-count" aria-live="polite">9 products</p>
+        <ul class="catalog" id="catalog"></ul>
+        <div class="catalog-empty" id="catalog-empty" hidden>
+          <p>No products match that search.</p>
+          <button class="link-arrow" type="button" id="catalog-reset">Clear search and filters</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Evidence / stats -->
+    <section class="section band" id="evidence" aria-labelledby="evidence-title">
+      <div class="shell">
+        <div class="section-head section-head--dark">
+          <div>
+            <p class="eyebrow eyebrow--light" data-reveal><span class="eyebrow__num">04</span> Evidence</p>
+            <h2 class="display" id="evidence-title" data-reveal>The unglamorous part is the product.</h2>
+          </div>
+          <div class="section-head__aside" data-reveal>
+            <p>Discovery gets the press. Batch records get patients their medicine. We run our own quality systems, audit every supplier, and publish our inspection history.</p>
+            <a class="link-arrow link-arrow--light" href="#contact">Read the quality policy
+              <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="stats" data-reveal>
+          <div class="stat">
+            <p class="stat__num"><span data-count="150">150</span><span class="stat__suffix">+</span></p>
+            <p class="stat__caption">Marketing authorisations held across the portfolio</p>
+          </div>
+          <div class="stat">
+            <p class="stat__num"><span data-count="50">50</span><span class="stat__suffix">+</span></p>
+            <p class="stat__caption">Countries where Bioverse products are available</p>
+          </div>
+          <div class="stat">
+            <p class="stat__num"><span data-count="2000">2,000</span><span class="stat__suffix">+</span></p>
+            <p class="stat__caption">Patients enrolled in company-sponsored trials</p>
+          </div>
+          <div class="stat">
+            <p class="stat__num"><span data-count="99">99</span><span class="stat__suffix">%</span></p>
+            <p class="stat__caption">Batches accepted on first regulatory review</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Full-width quote band -->
+    <section class="quote-band grain" aria-label="Quote from a clinical partner">
+      <img src="assets/images/lab-pipette.jpg" width="1280" height="980" alt="" loading="lazy" decoding="async">
+      <div class="shell quote-band__inner">
+        <blockquote>
+          “The trial was well run. That is rarer than it should be.”
+          <cite>Dr. Anneke Visser — Head of Clinical Pharmacology, Rheinmark Klinik</cite>
+        </blockquote>
+        <p class="quote-band__note">Site initiation, Rheinmark Klinik — one of 34 active sites.</p>
+      </div>
+    </section>
+
+    <!-- Voices & partners -->
+    <section class="section" id="voices" aria-labelledby="voices-title">
+      <div class="shell">
+        <div class="voices__head">
+          <div>
+            <p class="eyebrow" data-reveal><span class="eyebrow__num">05</span> Working with us</p>
+            <h2 class="display" id="voices-title" data-reveal>What partners notice.</h2>
+          </div>
+          <p class="voices__intro" data-reveal>Thirty-four sites, six contract manufacturers, and one CRO. Most of them have been with us for more than five years.</p>
+        </div>
+
+        <div class="voices">
+          <figure class="voice" data-reveal>
+            <blockquote>“Bioverse answered a protocol question in four hours. Our site has never had that from a sponsor.”</blockquote>
+            <figcaption>Dr. Anneke Visser<span>Head of Clinical Pharmacology, Rheinmark Klinik</span></figcaption>
+          </figure>
+          <figure class="voice" data-reveal style="--reveal-delay:120ms">
+            <blockquote>“Their batch records are the cleanest we audit. It makes our job boring, which is the point.”</blockquote>
+            <figcaption>Jonas Keller<span>Qualified Person, Nordmark Pharma Services</span></figcaption>
+          </figure>
+        </div>
+
+        <div class="partners" data-reveal>
+          <p class="partners__label">Selected partners</p>
+          <ul class="partners__list">
+            <li><span class="partner partner--mono">NORDMARK</span></li>
+            <li><span class="partner partner--serif">Helvetia Klinik</span></li>
+            <li><span class="partner partner--sans">ATLAS CRO</span></li>
+            <li><span class="partner partner--serif-small">Meridian Health</span></li>
+            <li><span class="partner partner--mono">KITE INSTITUTE</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Insights -->
+    <section class="section section--tight" id="insights" aria-labelledby="insights-title">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow" data-reveal><span class="eyebrow__num">06</span> Insights</p>
+            <h2 class="display" id="insights-title" data-reveal>Recent reading.</h2>
+          </div>
+          <div class="section-head__aside" data-reveal>
+            <a class="link-arrow" href="#">All insights
+              <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="insights">
+          <article class="insight insight--lead" data-reveal>
+            <p class="meta"><time datetime="2026-08-12">12 Aug 2026</time><span>Clinical</span></p>
+            <h3><a href="#">BV-204 meets its primary endpoint in Phase IIb</a></h3>
+            <p>ACR50 at week 24 was 41% versus 18% on placebo (n=286). Full data will be presented at the autumn congress; the safety profile was consistent with Phase I.</p>
+            <a class="link-arrow" href="#" aria-label="Read BV-204 meets its primary endpoint in Phase IIb">Read the note
+              <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+            </a>
+          </article>
+
+          <article class="insight" data-reveal style="--reveal-delay:100ms">
+            <p class="meta"><time datetime="2026-07-03">03 Jul 2026</time><span>Manufacturing</span></p>
+            <h3><a href="#">Basel line 3 cleared for EU release</a></h3>
+            <p>Swissmedic closed the follow-up inspection with no critical findings. The line adds 40 million tablets a year.</p>
+          </article>
+
+          <article class="insight" data-reveal style="--reveal-delay:180ms">
+            <p class="meta"><time datetime="2026-05-19">19 May 2026</time><span>Corporate</span></p>
+            <h3><a href="#">Bioverse joins the WHO prequalification programme</a></h3>
+            <p>Two presentations have been submitted for review. The first decision is expected in the second half of 2027.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Careers -->
+    <section class="careers" aria-labelledby="careers-title">
+      <div class="shell careers__inner">
+        <div>
+          <p class="eyebrow eyebrow--accent" data-reveal><span class="eyebrow__num">07</span> Careers</p>
+          <h2 class="display" id="careers-title" data-reveal>We hire slowly. Then we stay.</h2>
+        </div>
+        <div class="careers__body" data-reveal>
+          <p>Median tenure is 4.6 years. We would rather add one good person than three fast ones. Thirty-one roles are open across R&amp;D, quality and regulatory.</p>
+          <div class="careers__actions">
+            <a class="btn" href="#">See open roles — 31
+              <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+            </a>
+            <a class="link-arrow" href="#">Life at Bioverse</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section" id="contact" aria-labelledby="contact-title">
+      <div class="shell">
+        <p class="eyebrow" data-reveal><span class="eyebrow__num">08</span> Contact</p>
+        <div class="contact">
+          <div class="contact__info">
+            <h2 class="display" id="contact-title" data-reveal>Talk to a person.</h2>
+            <p class="contact__lede" data-reveal>Medical information, partnerships, or press — choose a topic and we will route it. We reply within two working days.</p>
+
+            <dl class="contact__list" data-reveal>
+              <div><dt>Partnerships</dt><dd><a href="mailto:hello@bioverse.ch">hello@bioverse.ch</a></dd></div>
+              <div><dt>Medical information</dt><dd><a href="mailto:medinfo@bioverse.ch">medinfo@bioverse.ch</a><span>+41 61 000 00 01</span></dd></div>
+              <div><dt>Media</dt><dd><a href="mailto:press@bioverse.ch">press@bioverse.ch</a></dd></div>
+              <div><dt>Office</dt><dd>St. Johanns-Vorstadt 00<br>4057 Basel, Switzerland</dd></div>
+            </dl>
+
+            <p class="contact__note">For suspected adverse reactions, contact <a href="mailto:medinfo@bioverse.ch">medinfo@bioverse.ch</a> or your national reporting authority. This site is intended for healthcare professionals and partners, not for medical advice.</p>
+          </div>
+
+          <form class="form" id="contact-form" action="#" method="post" novalidate>
+            <div class="form__row">
+              <div class="field">
+                <label for="name">Full name</label>
+                <input type="text" id="name" name="name" autocomplete="name" required aria-describedby="name-error">
+                <p class="field__error" id="name-error" hidden></p>
+              </div>
+              <div class="field">
+                <label for="email">Work email</label>
+                <input type="email" id="email" name="email" autocomplete="email" required aria-describedby="email-error">
+                <p class="field__error" id="email-error" hidden></p>
+              </div>
+            </div>
+
+            <div class="form__row">
+              <div class="field">
+                <label for="organisation">Organisation <span>(optional)</span></label>
+                <input type="text" id="organisation" name="organisation" autocomplete="organization">
+              </div>
+              <div class="field">
+                <label for="topic">Topic</label>
+                <select id="topic" name="topic" required aria-describedby="topic-error">
+                  <option value="">Choose a topic</option>
+                  <option>Medical information</option>
+                  <option>Clinical partnership</option>
+                  <option>Supply &amp; distribution</option>
+                  <option>Media &amp; press</option>
+                  <option>Careers</option>
+                  <option>Other</option>
+                </select>
+                <p class="field__error" id="topic-error" hidden></p>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" required minlength="20" aria-describedby="message-error"></textarea>
+              <p class="field__hint">Please do not include patient-identifiable information.</p>
+              <p class="field__error" id="message-error" hidden></p>
+            </div>
+
+            <!-- Honeypot: hidden from people, visible to naive bots -->
+            <div class="hp" aria-hidden="true">
+              <label for="company-website">Do not fill this field</label>
+              <input type="text" id="company-website" name="_gotcha" tabindex="-1" autocomplete="off">
+            </div>
+
+            <div class="form__footer">
+              <button class="btn" type="submit" id="contact-submit">
+                <span>Send message</span>
+                <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+              </button>
+              <p class="form__privacy">By sending this form you agree to our <a href="#">privacy notice</a>. We keep enquiries for 24 months.</p>
+            </div>
+            <p class="form__status" id="form-status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="shell">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a class="brand brand--footer" href="#main" aria-label="Bioverse — home">
+            <span class="brand__mark" aria-hidden="true"></span>
+            <span class="brand__type">
+              <span class="brand__word">Bioverse</span>
+              <span class="brand__desc">Pharmaceutical Industries</span>
+            </span>
+          </a>
+          <address>
+            Bioverse AG<br>
+            St. Johanns-Vorstadt 00<br>
+            4057 Basel, Switzerland
+          </address>
+          <ul class="social" aria-label="Bioverse on social media">
+            <li><a href="https://www.linkedin.com/company/bioverse" aria-label="Bioverse on LinkedIn"><svg class="icon icon--brand" aria-hidden="true"><use href="#i-linkedin"/></svg></a></li>
+            <li><a href="https://x.com/bioverse" aria-label="Bioverse on X"><svg class="icon icon--brand" aria-hidden="true"><use href="#i-x"/></svg></a></li>
+          </ul>
+        </div>
+
+        <div class="newsletter">
+          <h2 class="footer__heading">The Quarterly</h2>
+          <p>Four emails a year. Trial readouts, batch releases, and one long read. No more than that.</p>
+          <form class="newsletter__form" id="newsletter-form" novalidate>
+            <label class="sr-only" for="newsletter-email">Email address</label>
+            <input type="email" id="newsletter-email" name="email" placeholder="Your email" autocomplete="email" required>
+            <button class="btn btn--sm btn--light" type="submit" id="newsletter-submit">Subscribe</button>
+          </form>
+          <p class="newsletter__status" id="newsletter-status" role="status" aria-live="polite"></p>
+        </div>
+      </div>
+
+      <div class="footer__cols">
+        <nav aria-labelledby="footer-company">
+          <h2 class="footer__heading" id="footer-company">Company</h2>
+          <ul>
+            <li><a href="#company">About</a></li>
+            <li><a href="#pipeline">Pipeline</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#insights">Newsroom</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="footer-products">
+          <h2 class="footer__heading" id="footer-products">Products</h2>
+          <ul>
+            <li><a href="#products">Approved products</a></li>
+            <li><a href="#pipeline">Pipeline</a></li>
+            <li><a href="#">Prescribing information</a></li>
+            <li><a href="#">Pharmacovigilance</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="footer-legal">
+          <h2 class="footer__heading" id="footer-legal">Legal</h2>
+          <ul>
+            <li><a href="#">Privacy notice</a></li>
+            <li><a href="#">Terms of use</a></li>
+            <li><a href="#">Cookie settings</a></li>
+            <li><a href="#">Accessibility</a></li>
+          </ul>
+        </nav>
+        <div>
+          <h2 class="footer__heading">Contact</h2>
+          <ul>
+            <li><a href="mailto:hello@bioverse.ch">hello@bioverse.ch</a></li>
+            <li><a href="tel:+41610000000">+41 61 000 00 00</a></li>
+            <li><a href="#contact">Partner with us</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p>© <span id="year">2026</span> Bioverse AG. Registered in Basel-Stadt.</p>
+        <p class="footer__credit">Photography — <a href="assets/images/CREDITS.md">credits</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="to-top" id="to-top" type="button" aria-label="Back to top">
+    <svg class="icon" aria-hidden="true"><use href="#i-up"/></svg>
+  </button>
+
+  <!-- Product dialog -->
+  <dialog class="product-dialog" id="product-dialog" aria-labelledby="dialog-title">
+    <h2 class="sr-only" id="dialog-title">Product information</h2>
+    <div class="dialog__bar">
+      <p class="dialog__kicker">Product information</p>
+      <button class="icon-btn" type="button" id="dialog-close" aria-label="Close product details">
+        <svg class="icon" aria-hidden="true"><use href="#i-close"/></svg>
+      </button>
+    </div>
+    <div class="dialog__body" id="dialog-body"></div>
+  </dialog>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
